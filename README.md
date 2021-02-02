@@ -6,6 +6,8 @@ Presently just used for testing API nodes for history and chain queries.
 ## Usage (html,javascript,jquery,php) - no live database needed
 Put folders in a web server directory, navigate to the /sys folder.  Presently works of the index.html file.
 
+![Telos API Manager v0.80b](https://i.imgur.com/KIavxVN.png)
+
 💾 Save Icon - Saves / Updates the entry inside the telosAPIList.json file
 
 ❌ Delete Icon - Deletes the entry from telosAPIList.json file
