@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- apiTelosInc - index.html -->
+<meta charset="utf-8" />
+
+<!-- JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src='./js/buildNodeMenu.js'></script>
+<script src='../live/js/queryBuild.js'></script>
+
+
+<script type="text/javascript">
+
+
+$( document ).ready(function() {
+    
+    $(".test_url").val('');
+    $(".test_type").val('');
+    $(".test_flags").val('');
+    $("#test_out").val('');
+    
+    buildAllNodes();
+});
+
+</script>
+
+</head>
+<body>
+<div style="height: 50px; width: 100%;">&nbsp;</div>
+<div style="width: 80%; margin: auto;">
+<h1 style="margin: 0px; padding: 0px; color: #571aff;">Telos API Manager</h1>
+<span style="margin: 0px; margin-left: 25px; padding: 0px; font-size: 10pt;">by <a href="https://defi.tlccc.sg" style="color: #537eff; text-decoration: none;" target="_blank">TLCC Consultants Pte. Ltd.</a></span><br>
+<span style="margin: 0px; margin-left: 25px; padding: 0px; font-size: 10pt;">version 0.b80</span><br>
+<span style="margin: 0px; margin-left: 25px; padding: 0px; font-size: 10pt;">Copyright &#169; 2021 - <a href="https://mit-license.org/" style="color: #537eff; text-decoration: none;" target="_blank">MIT License</a></span>
+<hr style="border: 3px solid #571aff;">
+<p style="font-family: Tahoma; font-size: 11px;">The <a href="https://github.com/telosnetwork" style="color: #537eff; text-decoration: none;" target="_blank">Telos Network</a> is a decentralized cryptocurrency project built on EOSIO software.</p>
+<p>&nbsp;</p>
+<h2 style="margin: 0px; padding: 0px; color: #571aff;">Node List</h2>
+<p style="font-family: Tahoma; font-size: 11px; margin: 0px; padding: 0px; margin-left: 25px;">File Location: <a href="../live/var/telosAPIList.json" target="_blank">apiTelos/live/var/telosAPIList.json</a></p>
+<center><button id="btnRefresh" onclick="buildAllNodes()">REFRESH &#128260;</button><br>&nbsp;</center>
+<p style="font-family: Tahoma; font-size: 11px;"> H: History API &nbsp; C: Chain API &nbsp; S: State API &nbsp; T: Push Transactions &nbsp; Post?: Post or Get</p>
+<div id="api_nodes"></div>
+<hr style="border: 3px solid #571aff;">
+<p>&nbsp;</p>
+<p style="font-family: Tahoma; font-size: 11px;">On the current list, some history nodes support one of the two possible uses get_actions / get_transaction, only CalEOS supports both. - 02 FEB 2021</p>
+<p style="font-family: Tahoma; font-size: 11px;"> CalEOS Both, Greymass get_transaction, Telos Unlimited get_actions </p>
+<p>&nbsp;</p>
+<h4 style="margin: 0px; padding: 0px; color: #571aff; margin-bottom: 10px;">Selected API Interface</h4>
+URL: <input type="text" class="test_url" style="width: 600px;" readonly><br>
+Type: <input type="text" class="test_type" style="width: 100px;" readonly><br>
+Flags: <input type="text" class="test_flags" style="width: 100px;" readonly>
+<p>&nbsp;</p>
+<span style="font-size: 10px;">API Result:</span><br>
+<textarea id="test_out" name="test_out" rows="4" cols="50" style="width: 60%">
+</textarea>
+<p>&nbsp;</p>
+<h4 style="margin: 0px; padding: 0px; color: #571aff;">API Service Test</h4>
+<div id="api_tests">
+...
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</body>
+</html>
