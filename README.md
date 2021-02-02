@@ -30,7 +30,7 @@ sTests = sTests + singleHtmlTest("get_currency_balance", urlAPIQuery(sURL, "get_
 ### aVars
 An array of string elements ["...", "...", "...", ...] , each element of the string is separated by a comma "," .  The first half preceeding the comma is the name of the variable.  The second half of the string following the comma is the value of the variable for the API Query.  Adding more elements to the array, creates more variables to query.
 
-### function singleHtmlTest(test_name, url, index)
+### function singleHtmlTest(test_name, url, type, vars, index)
 ```
 // generates html for single node test
 //
