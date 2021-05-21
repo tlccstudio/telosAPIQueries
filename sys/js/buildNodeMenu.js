@@ -39,10 +39,16 @@ function buildAllTests()
     if(bH)
     {
         sTests = sTests + '<h5>History Tests</h5>';
+        
         aVars = ["limit,5", "account,eosio", "skip,0"];
         sTests = sTests + singleHtmlTest("get_actions", urlAPIQuery(sURL, "get_actions", aVars, sType) , sType, aVars, 0);
+       
+        aVars = ["limit,5", "account,cinvestor.jc", "skip,0"];
+        sTests = sTests + singleHtmlTest("get_actions", urlAPIQuery(sURL, "get_actions", aVars, sType) , sType, aVars, 1);
+        
         aVars = ["id,55420e96a802428fb2c25fccfe46a442a16df30e7326f6393a3179f1c4be75cd"];
-        sTests = sTests + singleHtmlTest("get_transaction", urlAPIQuery(sURL, "get_transaction", aVars, sType) , sType, aVars, 1);
+        sTests = sTests + singleHtmlTest("get_transaction", urlAPIQuery(sURL, "get_transaction", aVars, sType) , sType, aVars, 2);
+        
     }
     
     if(bC)
@@ -56,6 +62,8 @@ function buildAllTests()
         sTests = sTests + singleHtmlTest("get_account", urlAPIQuery(sURL, "get_account", aVars, sType) , sType, aVars, 4);
         aVars = ["code,eosio.token","account,eosio","symbol,TLOS"];
         sTests = sTests + singleHtmlTest("get_currency_balance", urlAPIQuery(sURL, "get_currency_balance", aVars, sType) , sType, aVars, 5);
+        aVars = ["code,revelation21","json,true","limit,20","scope,revelation21","table,accounts"];
+        sTests = sTests + singleHtmlTest("get_table_rows", urlAPIQuery(sURL, "get_table_rows", aVars, sType) , sType, aVars, 6);
  }
     
     $('#api_tests').html(sTests);
