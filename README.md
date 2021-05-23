@@ -1,4 +1,4 @@
-# telosAPIQueries
+# telosAPIQueries - Developer Branch
 Open source code project for managing Telos Public Blockchain API Queries.
 
 Presently just used for testing API nodes for history and chain queries.
